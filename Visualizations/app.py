@@ -6,13 +6,28 @@ from flask import render_template
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
-    return 'Hello, World!'
+@app.route('/home')
+@app.route('/Home')
+@app.route('/Index')
+@app.route('/index')
+def index():
+    title = 'Home'
+    return render_template('index.html', title=title)
+
+@app.route('/Inspirations')
+@app.route('/insp')
+@app.route('/Insp')
+@app.route('/inspirations')
+def inspirations():
+    title = 'Inspirations'
+    return render_template('inspirations.html', title=title)
 
 @app.route('/Waluigi')
-def index():
-    myName = "Waluigi"
-    return render_template('jquery.html', name=myName)
+@app.route('/waluigi')
+@app.route('/ourlordandsaviour')
+def waluigiPage():
+    title = 'WAAAAAAAAA'
+    return render_template('jquery.html', title=title)
     
 if __name__ == "__main__":
     app.run(debug=True, port=8080)
