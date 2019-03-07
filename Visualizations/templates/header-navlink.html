@@ -1,0 +1,11 @@
+<div class="col-3">
+    <div class="navbar-link">
+        <a href="{{ url_for(link[0]) }}">
+            {% if link[0]==linkName %}
+                <strong>{{ link[1] }}</strong>
+            {% else %}
+                {{ link[1] }}
+            {% endif %}
+        </a>
+    </div>
+</div>
